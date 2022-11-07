@@ -1,0 +1,15 @@
+<tr id="mobile_row_<%= mobile.id%>">
+  <td><%= mobile.brand_name %></td>
+  <td> <%= mobile.ram %></td>
+  <td><%= mobile.rom %></td>
+  <td><%= mobile.price %></td>
+  <td> 
+    <%= link_to "Show this mobile", mobile, class:"btn btn-success",data: { controller: "mobile-modal" } %> 
+
+    <%= link_to "Edit this mobile", edit_mobile_path(mobile), class:"btn btn-warning", data: { controller: "mobile-modal" } %> 
+    <%= link_to "Destroy", mobile_path(mobile), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: "btn btn-danger" %>                  
+  </td>
+</tr>

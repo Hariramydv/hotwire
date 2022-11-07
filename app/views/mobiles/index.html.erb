@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>List of Mobiles</h1>
+<%= link_to "New mobile", new_mobile_path, data: { controller: 'mobile-modal' }, class:"btn btn-primary" %>
+
+<table class="table table-border"  >
+  <thead>
+    <tr class="table-primary" >
+      <th id='th'>Brand Name</th>
+      <th id='th'>Ram</th>
+      <th id='th'>Rom</th>
+       <th id='th'>Price</th>
+      <th colspan="3", style="text-align:center; background-color:black;color:white;font-size:20px;padding-right: 10%;">Action</th>
+    </tr>
+  </thead>
+  <tbody id="mobile_list"  >
+      <% @mobiles.each do |mobile| %>
+        <%= render 'mobile', mobile: mobile %>
+      <% end %>  
+  </tbody>
+</table>
+
